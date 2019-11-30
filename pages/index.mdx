@@ -4,40 +4,11 @@ route: /
 ---
 
 import {Pagination} from '../src/components'
-import {QueryViewer, QueryTab, VariablesTab} from '../src/components'
 
 # Introduction
-
-<QueryViewer>
-    <QueryTab>
-        <code>{`
-mutation createFolder($path: String) {
-    createFolder(path: $path) {
-        ... on Error {
-            success
-            error
-        }
-        ... on Success {
-            success
-            message
-        }
-    }
-}
-        `}
-        </code>
-    </QueryTab>
-    <VariablesTab>
-        <code>{`
-{
-    "path": "path-to-your-folder"
-}
-        `}
-        </code>
-    </VariablesTab>
-</QueryViewer>
 
 DailyGit is platform that provides you the powerful tools to build your own CMS(Content Management System). DailyGit comes built in with version control, filesystem and database for storing files metadata.
 
 ![DalyGit Flow](../public/images/dailygit-flow.png)
 
-<Pagination prev={{name: "Previous Page", link: "/prev-page"}} next={{name: "Next Page", link: "/next-page"}}/>
+<Pagination next={{name: "Filesystem - Create File", link: "/filesystem/create"}}/>

@@ -8,7 +8,6 @@ import { ArrowLeft, ArrowRight } from "../assets/svgs";
 
 const Pagination = ({ prev, next }) => {
   const [colorMode] = useColorMode();
-  console.log(colorMode);
   return (
     <PaginationWrapper>
       {prev && (
