@@ -1,3 +1,4 @@
 import Pagination from "./Pagination";
+import { QueryViewer, QueryTab, VariablesTab } from "./QueryViewer";
 
-export { Pagination };
+export { Pagination, QueryViewer, QueryTab, VariablesTab };
