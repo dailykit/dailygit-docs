@@ -1,0 +1,24 @@
+---
+name: Create File
+route: /filesystem/create
+menu: File System
+---
+
+import {Pagination} from '../../src/components'
+
+# Create File
+
+This method can be used to create a new file in the filesystem.
+
+### API
+
+```js
+    createFile(path, content)
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where to save your file|
+|content|string|Content to store in the file|
+
+<Pagination prev={{name: "Introduction", link: "/"}} next={{name: "Filesysem - Delete File", link: "/filesystem/delete"}}/>
