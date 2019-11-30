@@ -1,36 +1,39 @@
 import React from "react";
 import { Link } from "gatsby";
+import { useColorMode } from "theme-ui";
 
-import styles from "./style.module.css";
+import { PaginationWrapper, Card } from "./styles";
 
 import { ArrowLeft, ArrowRight } from "../assets/svgs";
 
 const Pagination = ({ prev, next }) => {
+  const [colorMode] = useColorMode();
+  console.log(colorMode);
   return (
-    <div className={styles.pagination}>
+    <PaginationWrapper>
       {prev && (
         <Link to={prev.link}>
-          <div className={styles.card}>
+          <Card mode={colorMode}>
             <ArrowLeft color="#AFA4A4" />
             <div>
               <span>Previous</span>
               <h3>{prev.name}</h3>
             </div>
-          </div>
+          </Card>
         </Link>
       )}
       {next && (
         <Link to={next.link}>
-          <div className={styles.card}>
+          <Card mode={colorMode}>
             <div>
               <span>Next</span>
               <h3>{next.name}</h3>
             </div>
             <ArrowRight color="#AFA4A4" />
-          </div>
+          </Card>
         </Link>
       )}
-    </div>
+    </PaginationWrapper>
   );
 };
 
