@@ -43,23 +43,45 @@ export default {
           textAlign: "left",
           py: "4px",
           pr: "4px",
-          pl: 0,
-          borderColor: "muted",
-          borderBottomStyle: "solid"
+          pl: "12px !important",
+          border: "1px solid #e0e0e0",
+          borderBottom: "none",
+          borderRight: "none"
+        }
+      },
+      tr: {
+        "&:nth-child(even)": {
+          background: "#fbfbfb"
+        },
+        "&:last-child": {
+          [["td"]]: {
+            borderBottom: "1px solid #e0e0e0"
+          }
         }
       },
       th: {
-        borderBottomWidth: 1,
-        borderBottomColor: "#e5eef7",
         fontSize: 14,
         textTransform: "uppercase",
+        fontWeight: "600",
         color: "#9bacbd",
-        fontWeight: 500
+        fontWeight: 500,
+        "&:last-child": {
+          borderRight: "1px solid #e0e0e0"
+        }
       },
       td: {
-        verticalAlign: "top",
-        borderBottomWidth: "1px",
-        fontSize: 16
+        height: "32px",
+        verticalAlign: "middle",
+        fontSize: 16,
+        "&:last-child": {
+          borderRight: "1px solid #e0e0e0"
+        }
+      },
+      blockquote: {
+        my: 3,
+        py: 3,
+        px: 3,
+        borderLeft: "3px solid rgba(0,0,0,0.1)"
       }
     }
   }
