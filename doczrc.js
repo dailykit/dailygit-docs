@@ -17,6 +17,17 @@ export default {
           bg: "#6b9a25",
           color: "#fff"
         }
+      },
+      sidebar: {
+        bg: "#F5F7F9"
+      }
+    },
+    sidebar: {
+      title: {
+        height: "40px"
+      },
+      link: {
+        height: "32px"
       }
     },
     styles: {
