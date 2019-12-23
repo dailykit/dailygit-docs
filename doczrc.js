@@ -2,7 +2,7 @@ export default {
   menu: [
     "Introduction",
     {
-      name: "File System",
+      name: "File",
       menu: ["Create File"]
     }
   ],
