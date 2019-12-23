@@ -30,6 +30,15 @@ export default {
         height: "32px"
       }
     },
+    fonts: {
+      body: "'IBM Plex Sans', sans-serif",
+      heading: "'IBM Plex Sans', sans-serif"
+    },
+    fontWeights: {
+      body: 400,
+      bold: 500,
+      heading: 600
+    },
     styles: {
       Container: {
         maxWidth: 980
