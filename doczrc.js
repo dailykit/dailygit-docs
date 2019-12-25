@@ -14,6 +14,10 @@ export default {
     {
       name: "Folder",
       menu: ["Create Folder", "Delete Folder", "Rename Folder"]
+    },
+    {
+      name: "Git",
+      menu: ["Add and Commit", "Remove and Commit"]
     }
   ],
   title: "DailyGit Docs",
