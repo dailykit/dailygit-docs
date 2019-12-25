@@ -1,0 +1,24 @@
+---
+name: Rename Folder
+route: /folder/rename
+menu: Folder
+---
+
+import {Pagination} from '../../src/components'
+
+# Rename Folder
+
+This method can be used to rename a folder in the filesystem.
+
+### API
+
+```js
+    renameFolder(path) => Promise<void>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|oldPath|string|Path with the old name|
+|newPath|string|Path with the new name|
+
+<Pagination prev={{name: "Folder - Delete Folder", link: "/folder/delete"}} />
