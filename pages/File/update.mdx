@@ -1,0 +1,24 @@
+---
+name: Update File
+route: /file/update
+menu: File
+---
+
+import {Pagination} from '../../src/components'
+
+# Update File
+
+This method can be used to update a file in the filesystem.
+
+### API
+
+```js
+    updateFile(path, content) => Promise<string>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where to save your file|
+|content|string|Content to store in the file|
+
+<Pagination prev={{name: "File - Delete File", link: "/file/delete"}} />

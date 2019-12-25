@@ -3,7 +3,7 @@ export default {
     "Introduction",
     {
       name: "File",
-      menu: ["Create File", "Delete File"]
+      menu: ["Create File", "Delete File", "Update File"]
     }
   ],
   title: "DailyGit Docs",
