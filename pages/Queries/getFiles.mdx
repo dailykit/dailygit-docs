@@ -1,0 +1,48 @@
+---
+name: Get Files
+route: /queries/get-files
+menu: Queries
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Get files
+
+This method can be used to get all the files within a folder
+
+### API
+
+```js
+   getFiles(path) => Promise<[File]>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path to the folder to get the files inside|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`query getFiles($path: String!){
+  getFiles(path: $path) {
+    type
+    size
+    createdAt
+    commits
+    lastSaved
+    path
+    name
+    content
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+   "path": "../apps/appname/data/entityname"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Get Nested Folders", link: "/queries/get-nested-folders"}} next={{name: "Get File", link: "/queries/get-file"}} />

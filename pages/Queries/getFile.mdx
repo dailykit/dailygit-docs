@@ -1,0 +1,48 @@
+---
+name: Get File
+route: /queries/get-file
+menu: Queries
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Get file
+
+This method can be used to get a file from filesystem
+
+### API
+
+```js
+   getFile(path) => Promise<File>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where the file is stored|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`query getFile($path: String!){
+  getFile(path: $path) {
+    name
+    path
+    content
+    createdAt
+    size
+    type
+    commits
+    lastSaved
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+   "path": "../apps/appname/data/entityname/filename.json"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Get Files", link: "/queries/get-files"}} next={{name: "Open File", link: "/queries/open-file"}} />

@@ -21,7 +21,18 @@ export default {
     },
     {
       name: "Queries",
-      menu: ["Get Folder With Files"]
+      menu: [
+        "Get Folder With Files",
+        "Get Nested Folders",
+        "Get Files",
+        "Get File",
+        "Open File",
+        "Search Files",
+        "Get Commit",
+        "Get Commits",
+        "Get Commit Log",
+        "Get Commit Content"
+      ]
     }
   ],
   title: "DailyGit Docs",
