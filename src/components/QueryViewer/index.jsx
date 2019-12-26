@@ -32,7 +32,11 @@ const QueryViewer = ({ children }) => {
           Variables
         </Tab>
       </Tabs>
-      <Content>{children[current]}</Content>
+      <Content>
+        <pre>
+          <code lang="graphql">{children[current].props.children}</code>
+        </pre>
+      </Content>
     </StyledQueryViewer>
   );
 };
