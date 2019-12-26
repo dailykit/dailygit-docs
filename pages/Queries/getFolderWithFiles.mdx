@@ -1,0 +1,56 @@
+---
+name: Get Folder With Files
+route: /queries/get-folder-with-files
+menu: Queries
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Get folders with files
+
+This method can be used to get the folders along with files from filesystem
+
+### API
+
+```js
+   getFolderWithFiles(path) => Promise<object>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where the folder is stored|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`query {
+   getFolderWithFiles($path: String) {
+      getFolderWithFiles(path: $path) {
+         name
+         path
+         type
+         size
+         createdAt
+         content
+         children {
+            name
+            path
+            type
+            size
+            createdAt
+            content
+         }
+      }
+   }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+   "path": "../apps/appname/data/entityname/file.json"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Remove and Commit", link: "/git/remove-and-commit"}} next={{name: "Get Nested Folders", link: "/queries/get-nested-folders"}} />

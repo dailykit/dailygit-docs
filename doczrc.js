@@ -18,6 +18,10 @@ export default {
     {
       name: "Git",
       menu: ["Add and Commit", "Remove and Commit"]
+    },
+    {
+      name: "Queries",
+      menu: ["Get Folder With Files"]
     }
   ],
   title: "DailyGit Docs",
