@@ -1,0 +1,50 @@
+---
+name: Rename File
+route: /mutations/rename-file
+menu: Mutations
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Rename File
+
+This method can be used to rename a file in filesystem
+
+### API
+
+```js
+   renameFile(oldPath, newPath) => Promise<Result>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|oldPath|string|Path where the file is stored|
+|newPath|string|Path with new file name|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`mutation renameFile($oldPath: String!, $newPath: String!) {
+  renameFile(oldPath: $oldPath, newPath: $newPath) {
+    ... on Error {
+      success
+      error
+    }
+    ... on Success {
+      success
+      message
+    }
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+  "oldPath": "./../apps/appname/data/entityname/filename.json",
+  "newPath": "./../apps/appname/data/entityname/filename1.json"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Draft File", link: "/mutations/draft-file"}} next={{name: "Image Upload", link: "/mutations/image-upload"}} />

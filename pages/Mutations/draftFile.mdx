@@ -1,0 +1,50 @@
+---
+name: Draft File
+route: /mutations/draft-file
+menu: Mutations
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Draft File
+
+This method can be used to save a file as a draft in filesystem
+
+### API
+
+```js
+   draftFile(path, content) => Promise<Result>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where the file is stored|
+|content|string|Content to store in the file|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`mutation draftFile($path: String!, $content: String!) {
+  draftFile(path: $path, content: $content) {
+    ... on Error {
+      success
+      error
+    }
+    ... on Success {
+      success
+      message
+    }
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+  "path": "./../apps/appname/data/entityname/filename.json",
+  "content": "hello world!",
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Update File", link: "/mutations/update-file"}} next={{name: "Rename File", link: "/mutations/rename-file"}} />

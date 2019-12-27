@@ -1,0 +1,48 @@
+---
+name: Delete File
+route: /mutations/delete-file
+menu: Mutations
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Delete File
+
+This method can be used to delete file in filesystem
+
+### API
+
+```js
+   deleteFile(path) => Promise<Result>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where the file is stored|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`mutation deleteFile($path: String) {
+  deleteFile(path: $path) {
+    ... on Error {
+      success
+      error
+    }
+    ... on Success {
+      success
+      message
+    }
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+  "path": "./../apps/appname/data/entityname/filename.json"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Create File", link: "/mutations/create-file"}} next={{name: "Update File", link: "/mutations/update-file"}} />

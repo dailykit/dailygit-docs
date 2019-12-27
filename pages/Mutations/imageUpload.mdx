@@ -1,0 +1,50 @@
+---
+name: Image Upload
+route: /mutations/image-upload
+menu: Mutations
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Image Upload
+
+This method can be used to upload files into the filesystem
+
+### API
+
+```js
+   imageUpload(files, path) => Promise<Result>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where to store the files|
+|files|File|Array of file object|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`mutation imageUpload($files: [Upload!]!, $path: String!) {
+   imageUpload(files: $files, path: $path) {
+      ... on Error {
+         success
+         error
+      }
+      ... on Success {
+         success
+         message
+      }
+   }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+  "path": "./../apps/appname/data/entityname/filename.json",
+  "files": [File]
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Rename File", link: "/mutations/rename-file"}} next={{name: "Install App", link: "/mutations/install-app"}} />

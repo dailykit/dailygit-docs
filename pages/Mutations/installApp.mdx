@@ -1,0 +1,52 @@
+---
+name: Install App
+route: /mutations/install-app
+menu: Mutations
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Install App
+
+This method can be used to install a new app
+
+### API
+
+```js
+   install(name, schemas, apps, type, staging) => Promise<Result>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|name|string|Name of the app|
+|schemas|string|Schema of the app to install|
+|apps|string|Apps to read from|
+|type|string|Type of the app|
+|staging|Boolean|Whether to stage a file or not|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`mutation createFolder($path: String) {
+  createFolder(path: $path) {
+    ... on Error {
+      success
+      error
+    }
+    ... on Success {
+      success
+      message
+    }
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+  "path": "./../apps/appname/data/entityname/foldername"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Image Upload", link: "/mutations/image-upload"}}/>

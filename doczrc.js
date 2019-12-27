@@ -33,6 +33,21 @@ export default {
         "Get Commit Log",
         "Get Commit Content"
       ]
+    },
+    {
+      name: "Mutations",
+      menu: [
+        "Create Folder",
+        "Delete Folder",
+        "Rename Folder",
+        "Create File",
+        "Delete File",
+        "Update File",
+        "Draft File",
+        "Rename File",
+        "Image Upload",
+        "Install App"
+      ]
     }
   ],
   title: "DailyGit Docs",

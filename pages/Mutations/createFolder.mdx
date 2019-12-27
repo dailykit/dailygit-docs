@@ -1,0 +1,48 @@
+---
+name: Create Folder
+route: /mutations/create-folder
+menu: Mutations
+---
+
+import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+
+# Create Folder
+
+This method can be used to create a new folder in filesystem
+
+### API
+
+```js
+   createFolder(path) => Promise<Result>
+```
+
+|param|type|description|
+|:--|:--|:--|
+|path|string|Path where to store the folder|
+
+### Query
+<QueryViewer>
+   <QueryTab>
+{`mutation createFolder($path: String) {
+  createFolder(path: $path) {
+    ... on Error {
+      success
+      error
+    }
+    ... on Success {
+      success
+      message
+    }
+  }
+}
+`}
+   </QueryTab>
+   <VariablesTab>
+{`{
+  "path": "./../apps/appname/data/entityname/foldername"
+}
+`}
+   </VariablesTab>
+</QueryViewer>
+
+<Pagination prev={{name: "Get Commit Content", link: "/queries/get-commit-content"}} next={{name: "Delete Folder", link: "/mutations/delete-folder"}} />
