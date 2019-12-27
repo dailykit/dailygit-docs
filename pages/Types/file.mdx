@@ -1,0 +1,26 @@
+---
+name: File
+route: /types/file
+menu: Types
+---
+
+import {Pagination} from '../../src/components'
+
+# File
+
+This type represents the file object.
+
+```graphql
+type File {
+  name: String
+  path: String
+  type: String
+  content: String
+  size: Int
+  createdAt: String
+  commits: [String]
+  lastSaved: String
+}
+```
+
+<Pagination prev={{name: "Remove And Commit", link: "/git/remove-and-commit"}} next={{name: "Folder", link: "/types/folder"}} />

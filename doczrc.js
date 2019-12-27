@@ -20,6 +20,21 @@ export default {
       menu: ["Add and Commit", "Remove and Commit"]
     },
     {
+      name: "Types",
+      menu: [
+        "File",
+        "Folder",
+        "Folder With Files",
+        "Author",
+        "Committer",
+        "Commit",
+        "Result",
+        "Success",
+        "Error",
+        "Subscription"
+      ]
+    },
+    {
       name: "Queries",
       menu: [
         "Get Folder With Files",

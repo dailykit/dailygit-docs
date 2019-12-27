@@ -1,0 +1,24 @@
+---
+name: Folder
+route: /types/folder
+menu: Types
+---
+
+import {Pagination} from '../../src/components'
+
+# Folder
+
+This type represents the folder object
+
+```graphql
+type Folder {
+  name: String
+  path: String
+  type: String
+  size: Int
+  createdAt: String
+  children: [Folder]
+}
+```
+
+<Pagination prev={{name: "File", link: "/types/file"}} next={{name: "Folder With Files", link: "/types/folder-with-files"}} />

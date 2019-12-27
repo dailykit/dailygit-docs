@@ -1,0 +1,20 @@
+---
+name: Success
+route: /types/success
+menu: Types
+---
+
+import {Pagination} from '../../src/components'
+
+# Success
+
+This type represents Success object which is sent when an operation has been successfull
+
+```graphql
+type Success {
+  success: Boolean
+  message: String
+}
+```
+
+<Pagination prev={{name: "Result", link: "/types/result"}} next={{name: "Error", link: "/types/error"}} />

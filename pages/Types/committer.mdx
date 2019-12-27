@@ -1,0 +1,21 @@
+---
+name: Committer
+route: /types/committer
+menu: Types
+---
+
+import {Pagination} from '../../src/components'
+
+# Committer
+
+This type represents committer object
+
+```graphql
+type Committer {
+  name: String
+  email: String
+  timestamp: String
+}
+```
+
+<Pagination prev={{name: "Author", link: "/types/author"}} next={{name: "Commit", link: "/types/commit"}} />

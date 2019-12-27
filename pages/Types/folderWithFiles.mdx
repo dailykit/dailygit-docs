@@ -1,0 +1,25 @@
+---
+name: Folder With Files
+route: /types/folder-with-files
+menu: Types
+---
+
+import {Pagination} from '../../src/components'
+
+# Folder With Files
+
+This type represents folder object that can have children of type File or Folder
+
+```graphql
+type FolderWithFiles {
+  name: String
+  path: String
+  type: String
+  size: Int
+  createdAt: String
+  content: String
+  children: [FolderWithFiles]
+}
+```
+
+<Pagination prev={{name: "Folder", link: "/types/folder"}} next={{name: "Author", link: "/types/author"}} />
