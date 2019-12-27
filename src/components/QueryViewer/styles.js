@@ -60,7 +60,8 @@ export const Content = styled.div`
   padding: 16px;
   font-size: 16px;
   color: #fff;
-  background: #0f202d;
+  background: #1a1f3a;
+  overflow-x: auto;
   pre {
     margin: 0;
     padding: 0;
