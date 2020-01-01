@@ -42,8 +42,24 @@ This method can be used to install a new app
 `}
    </QueryTab>
    <VariablesTab>
-{`{
-  "path": "./../apps/appname/data/entityname/foldername"
+{`// Installing independent app
+{
+  "name": "Independent App",
+  "type": "independent",
+  "schemas": "{\n  \"schemas\": [\n    {\n      \"path\": \"Mobiles\",\n      \"entities\": [\n        {\n          \"name\": \"mobile\",\n          \"content\": {\n            \"name\": \"this is mobile schema\"\n          }\n        }\n      ]\n    },\n    {\n      \"path\": \"Laptops\",\n      \"entities\": [\n        {\n          \"name\": \"laptop\",\n          \"content\": {\n            \"name\": \"this is laptop schema\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+}
+// Installing dependent app
+{
+  "name": "Dependent App",
+  "type": "dependent",
+  "apps": "{\n  \"apps\": [\n    {\n      \"name\": \"Independent\",\n      \"entities\": [{\n        \"name\": \"Mobiles\",\n        \"schema\": {\n          \"name\":\"String\"\n        }\n      }]\n    }\n  ]\n}"
+}
+// Installing hybrid app
+{
+  "name": "Hybrid App",
+  "type": "hybrid",
+  "schemas": "{\n  \"schemas\": [\n    {\n      \"path\": \"Recipes\",\n      \"entities\": [\n        {\n          \"name\": \"recipes\",\n          \"content\": {\n            \"name\": \"this is recipe schema\"\n          }\n        }\n      ]\n    },\n    {\n      \"path\": \"Dishes\",\n      \"entities\": [\n        {\n          \"name\": \"dish\",\n          \"content\": {\n            \"name\": \"this is dish schema\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+  "apps": "{\n  \"apps\": [\n    {\n      \"name\": \"Independent\",\n      \"entities\": [{\n        \"name\": \"Mobiles\",\n        \"schema\": {\n          \"name\":\"String\"\n        }\n      }]\n    }\n  ]\n}"
 }
 `}
    </VariablesTab>
