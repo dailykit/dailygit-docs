@@ -13,18 +13,20 @@ This method can be used to get all the files within a folder
 ### API
 
 ```js
-   getFiles(path) => Promise<[File]>
+   getFiles(path, offset, limit) => Promise<[File]>
 ```
 
 |param|type|description|
 |:--|:--|:--|
 |path|string|Path to the folder to get the files inside|
+|offset|number|The number from where to start the page|
+|limit|number|Number of rows to fetch|
 
 ### Query
 <QueryViewer>
    <QueryTab>
-{`query getFiles($path: String!){
-  getFiles(path: $path) {
+{`query getFiles($path: String!, $offset: Int!, $limit: Int!){
+  getFiles(path: $path, offset: $offset, limit: $limit) {
     type
     size
     createdAt
@@ -39,7 +41,9 @@ This method can be used to get all the files within a folder
    </QueryTab>
    <VariablesTab>
 {`{
-   "path": "./../apps/appname/data/entityname"
+   "path": "./../apps/appname/data/entityname",
+   "offset": 2,
+   "limit":10
 }
 `}
    </VariablesTab>
