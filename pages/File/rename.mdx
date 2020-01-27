@@ -4,7 +4,7 @@ route: /file/rename
 menu: File
 ---
 
-import {Pagination} from '../../src/components'
+import { Pagination } from "../../src/components";
 
 # Rename File
 
@@ -13,12 +13,15 @@ This method can be used to rename a file in the filesystem.
 ### API
 
 ```js
-    renameFile(path) => Promise<string>
+    renameFile(oldPath, newPath) => Promise<string>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|oldPath|string|Path with the old name|
-|newPath|string|Path with the new name|
+| param   | type   | description            |
+| :------ | :----- | :--------------------- |
+| oldPath | string | Path with the old name |
+| newPath | string | Path with the new name |
 
-<Pagination prev={{name: "File - Read File", link: "/file/read"}} next={{name: "Folder - Create Folder", link: "/folder/create"}} />
+<Pagination
+  prev={{ name: "File - Read File", link: "/file/read" }}
+  next={{ name: "Folder - Create Folder", link: "/folder/create" }}
+/>

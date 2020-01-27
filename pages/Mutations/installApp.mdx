@@ -4,7 +4,12 @@ route: /mutations/install-app
 menu: Mutations
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Install App
 
@@ -13,22 +18,22 @@ This method can be used to install a new app
 ### API
 
 ```js
-   install(name, schemas, apps, type, staging) => Promise<Result>
+   install(name, schemas, apps, staging) => Promise<Result>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|name|string|Name of the app|
-|schemas|string|Schema of the app to install|
-|apps|string|Apps to read from|
-|type|string|Type of the app|
-|staging|Boolean|Whether to stage a file or not|
+| param   | type    | description                    |
+| :------ | :------ | :----------------------------- |
+| name    | string  | Name of the app                |
+| schemas | string  | Schema of the app to install   |
+| apps    | string  | Apps to read from              |
+| staging | Boolean | Whether to stage a file or not |
 
 ### Install Independent App Mutation
+
 <QueryViewer>
-   <QueryTab>
-{`mutation installApp($name: String!, $schemas: String, $type: String!) {
-  installApp(name: $name, schemas: $schemas, type: $type) {
+  <QueryTab>
+    {`mutation installApp($name: String!, $schemas: String) {
+  installApp(name: $name, schemas: $schemas) {
     ... on Error {
       error
       success
@@ -40,23 +45,22 @@ This method can be used to install a new app
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
+  </QueryTab>
+  <VariablesTab>
+    {`{
   "name": "Independent App",
-  "type": "independent",
   "schemas": "{\n  \"schemas\": [\n    {\n      \"path\": \"Mobiles\",\n      \"entities\": [\n        {\n          \"name\": \"mobile\",\n          \"content\": {\n            \"name\": \"this is mobile schema\"\n          }\n        }\n      ]\n    },\n    {\n      \"path\": \"Laptops\",\n      \"entities\": [\n        {\n          \"name\": \"laptop\",\n          \"content\": {\n            \"name\": \"this is laptop schema\"\n          }\n        }\n      ]\n    }\n  ]\n}"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
 
 ### Install Dependent App Mutation
 
 <QueryViewer>
-   <QueryTab>
-{`mutation installApp($name: String!, $apps: String, $type: String!, $staging: Boolean) {
-  installApp(name: $name, apps: $apps, type: $type, staging: $staging) {
+  <QueryTab>
+    {`mutation installApp($name: String!, $apps: String, $staging: Boolean) {
+  installApp(name: $name, apps: $apps, staging: $staging) {
     ... on Error {
       error
       success
@@ -68,23 +72,22 @@ This method can be used to install a new app
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
+  </QueryTab>
+  <VariablesTab>
+    {`{
   "name": "Dependent App",
-  "type": "dependent",
   "apps": "{\n  \"apps\": [\n    {\n      \"name\": \"Independent\",\n      \"entities\": [{\n        \"name\": \"Mobiles\",\n        \"schema\": {\n          \"name\":\"String\"\n        }\n      }]\n    }\n  ]\n}"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
 
 ### Install Hybrid App Mutation
 
 <QueryViewer>
-   <QueryTab>
-{`mutation installApp($name: String!, $schemas: String, $apps: String, $type: String!, $staging: Boolean) {
-  installApp(name: $name, schemas: $schemas, apps: $apps, type: $type, staging: $staging) {
+  <QueryTab>
+    {`mutation installApp($name: String!, $schemas: String, $apps: String, $staging: Boolean) {
+  installApp(name: $name, schemas: $schemas, apps: $apps, staging: $staging) {
     ... on Error {
       error
       success
@@ -96,16 +99,14 @@ This method can be used to install a new app
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
+  </QueryTab>
+  <VariablesTab>
+    {`{
   "name": "Hybrid App",
-  "type": "hybrid",
   "schemas": "{\n  \"schemas\": [\n    {\n      \"path\": \"Recipes\",\n      \"entities\": [\n        {\n          \"name\": \"recipes\",\n          \"content\": {\n            \"name\": \"this is recipe schema\"\n          }\n        }\n      ]\n    },\n    {\n      \"path\": \"Dishes\",\n      \"entities\": [\n        {\n          \"name\": \"dish\",\n          \"content\": {\n            \"name\": \"this is dish schema\"\n          }\n        }\n      ]\n    }\n  ]\n}",
   "apps": "{\n  \"apps\": [\n    {\n      \"name\": \"Independent\",\n      \"entities\": [{\n        \"name\": \"Mobiles\",\n        \"schema\": {\n          \"name\":\"String\"\n        }\n      }]\n    }\n  ]\n}"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Image Upload", link: "/mutations/image-upload"}}/>
+<Pagination prev={{ name: "Image Upload", link: "/mutations/image-upload" }} />

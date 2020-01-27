@@ -4,7 +4,7 @@ route: /git/add-and-commit
 menu: Git
 ---
 
-import {Pagination} from '../../src/components'
+import { Pagination } from "../../src/components";
 
 # Add and Commit
 
@@ -13,14 +13,18 @@ This method can be used to stage a file and commit it.
 ### API
 
 ```js
-    addAndCommit(path, author, committer, message) => Promise<sha>
+    addAndCommit({repoPath, filePath}, author, committer, message) => Promise<sha>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Relative path where the file stored|
-|author|object|Contains email and name of author|
-|committer|object|Contains email and name of committer|
-|message|string|Commit message|
+| param     | type   | description                                         |
+| :-------- | :----- | :-------------------------------------------------- |
+| repoPath  | string | Path to the repository                              |
+| filePath  | string | Relative path where the file stored from repository |
+| author    | object | Contains email and name of author                   |
+| committer | object | Contains email and name of committer                |
+| message   | string | Commit message                                      |
 
-<Pagination prev={{name: "Rename Folder", link: "/folder/rename"}} next={{name: "Git - Remove and Commit", link: "/git/remove-and-commit"}}/>
+<Pagination
+  prev={{ name: "Rename Folder", link: "/folder/rename" }}
+  next={{ name: "Git - Remove and Commit", link: "/git/remove-and-commit" }}
+/>

@@ -4,7 +4,7 @@ route: /folder/rename
 menu: Folder
 ---
 
-import {Pagination} from '../../src/components'
+import { Pagination } from "../../src/components";
 
 # Rename Folder
 
@@ -13,12 +13,15 @@ This method can be used to rename a folder in the filesystem.
 ### API
 
 ```js
-    renameFolder(path) => Promise<void>
+    renameFolder(oldPath, newPath) => Promise<void>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|oldPath|string|Path with the old name|
-|newPath|string|Path with the new name|
+| param   | type   | description            |
+| :------ | :----- | :--------------------- |
+| oldPath | string | Path with the old name |
+| newPath | string | Path with the new name |
 
-<Pagination prev={{name: "Folder - Delete Folder", link: "/folder/delete"}} next={{name: "Git - Add and Commit", link: "/git/add-and-commit"}} />
+<Pagination
+  prev={{ name: "Folder - Delete Folder", link: "/folder/delete" }}
+  next={{ name: "Git - Add and Commit", link: "/git/add-and-commit" }}
+/>
