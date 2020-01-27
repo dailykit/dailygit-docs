@@ -4,7 +4,7 @@ route: /types/file
 menu: Types
 ---
 
-import {Pagination} from '../../src/components'
+import { Pagination } from "../../src/components";
 
 # File
 
@@ -12,6 +12,7 @@ This type represents the file object.
 
 ```graphql
 type File {
+  id: ID
   name: String
   path: String
   type: String
@@ -23,4 +24,7 @@ type File {
 }
 ```
 
-<Pagination prev={{name: "Remove And Commit", link: "/git/remove-and-commit"}} next={{name: "Folder", link: "/types/folder"}} />
+<Pagination
+  prev={{ name: "Remove And Commit", link: "/git/remove-and-commit" }}
+  next={{ name: "Folder", link: "/types/folder" }}
+/>
