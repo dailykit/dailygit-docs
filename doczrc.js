@@ -42,7 +42,6 @@ export default {
         "Get Files",
         "Get File",
         "Open File",
-        "Search Files",
         "Get Commit",
         "Get Commits",
         "Get Commit Log",
