@@ -4,7 +4,12 @@ route: /queries/get-files
 menu: Queries
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Get files
 
@@ -16,16 +21,17 @@ This method can be used to get all the files within a folder
    getFiles(path, offset, limit) => Promise<[File]>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path to the folder to get the files inside|
-|offset|number|The number from where to start the page|
-|limit|number|Number of rows to fetch|
+| param  | type   | description                                |
+| :----- | :----- | :----------------------------------------- |
+| path   | string | Path to the folder to get the files inside |
+| offset | number | The number from where to start the page    |
+| limit  | number | Number of rows to fetch                    |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`query getFiles($path: String!, $offset: Int!, $limit: Int!){
+  <QueryTab>
+    {`query getFiles($path: String!, $offset: Int!, $limit: Int!){
   getFiles(path: $path, offset: $offset, limit: $limit) {
     type
     size
@@ -38,15 +44,17 @@ This method can be used to get all the files within a folder
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-   "path": "./../apps/appname/data/entityname",
+  </QueryTab>
+  <VariablesTab>
+    {`{
+   "path": "appname/data/entityname",
    "offset": 2,
    "limit":10
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Get Nested Folders", link: "/queries/get-nested-folders"}} next={{name: "Get File", link: "/queries/get-file"}} />
+<Pagination
+  prev={{ name: "Get Nested Folders", link: "/queries/get-nested-folders" }}
+  next={{ name: "Get File", link: "/queries/get-file" }}
+/>

@@ -4,7 +4,12 @@ route: /mutations/delete-folder
 menu: Mutations
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Delete Folder
 
@@ -16,14 +21,15 @@ This method can be used to delete a folder in filesystem
    deleteFolder(path) => Promise<Result>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path where the folder is stored|
+| param | type   | description                     |
+| :---- | :----- | :------------------------------ |
+| path  | string | Path where the folder is stored |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`mutation deleteFolder($path: String!) {
+  <QueryTab>
+    {`mutation deleteFolder($path: String!) {
   deleteFolder(path: $path) {
     ... on Error {
       success
@@ -36,13 +42,15 @@ This method can be used to delete a folder in filesystem
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-  "path": "./../apps/appname/data/entityname/foldername"
+  </QueryTab>
+  <VariablesTab>
+    {`{
+  "path": "appname/data/entityname/foldername"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Create Folder", link: "/mutations/create-folder"}} next={{name: "Rename Folder", link: "/mutations/rename-folder"}} />
+<Pagination
+  prev={{ name: "Create Folder", link: "/mutations/create-folder" }}
+  next={{ name: "Rename Folder", link: "/mutations/rename-folder" }}
+/>

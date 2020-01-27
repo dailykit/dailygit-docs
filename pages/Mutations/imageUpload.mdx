@@ -4,7 +4,12 @@ route: /mutations/image-upload
 menu: Mutations
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Image Upload
 
@@ -16,15 +21,16 @@ This method can be used to upload files into the filesystem
    imageUpload(files, path) => Promise<Result>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path where to store the files|
-|files|File|Array of file object|
+| param | type   | description                   |
+| :---- | :----- | :---------------------------- |
+| path  | string | Path where to store the files |
+| files | File   | Array of file object          |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`mutation imageUpload($files: [Upload!]!, $path: String!) {
+  <QueryTab>
+    {`mutation imageUpload($files: [Upload!]!, $path: String!) {
    imageUpload(files: $files, path: $path) {
       ... on Error {
          success
@@ -37,14 +43,16 @@ This method can be used to upload files into the filesystem
    }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-  "path": "./../apps/appname/data/entityname/filename.json",
+  </QueryTab>
+  <VariablesTab>
+    {`{
+  "path": "appname/data/entityname/filename.json",
   "files": [File]
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Rename File", link: "/mutations/rename-file"}} next={{name: "Install App", link: "/mutations/install-app"}} />
+<Pagination
+  prev={{ name: "Rename File", link: "/mutations/rename-file" }}
+  next={{ name: "Install App", link: "/mutations/install-app" }}
+/>

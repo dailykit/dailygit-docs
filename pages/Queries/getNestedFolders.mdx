@@ -4,7 +4,12 @@ route: /queries/get-nested-folders
 menu: Queries
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Get nested folders
 
@@ -16,14 +21,15 @@ This method can be used to get the nested folders only from filesystem
    getNestedFolders(path) => Promise<Folder>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path where the folder is stored|
+| param | type   | description                     |
+| :---- | :----- | :------------------------------ |
+| path  | string | Path where the folder is stored |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`query {
+  <QueryTab>
+    {`query {
    getNestedFolders($path: String) {
       getNestedFolders(path: $path) {
          name
@@ -42,13 +48,18 @@ This method can be used to get the nested folders only from filesystem
    }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-   "path": "./../apps/appname/data/entityname/foldername"
+  </QueryTab>
+  <VariablesTab>
+    {`{
+   "path": "appname/data/entityname"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Get Folder With Files", link: "/queries/get-folder-with-files"}} next={{name: "Get Files", link: "/queries/get-files"}} />
+<Pagination
+prev={{
+name: "Get Folder With Files",
+link: "/queries/get-folder-with-files"
+}}
+next={{ name: "Get Files", link: "/queries/get-files" }}
+/>

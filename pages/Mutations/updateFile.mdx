@@ -4,7 +4,12 @@ route: /mutations/update-file
 menu: Mutations
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Update File
 
@@ -16,16 +21,17 @@ This method can be used to update the content of a file stored in filesystem
    updateFile(path, content, message) => Promise<Result>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path where the file is stored|
-|content|string|Content to store in the file|
-|message|string|Commit Message|
+| param   | type   | description                   |
+| :------ | :----- | :---------------------------- |
+| path    | string | Path where the file is stored |
+| content | string | Content to store in the file  |
+| message | string | Commit Message                |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`mutation updateFile($path: String!, $content: String!, $message: String!) {
+  <QueryTab>
+    {`mutation updateFile($path: String!, $content: String!, $message: String!) {
   updateFile(path: $path, content: $content, message: $message) {
     ... on Error {
       success
@@ -38,15 +44,17 @@ This method can be used to update the content of a file stored in filesystem
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-  "path": "./../apps/appname/data/entityname/filename.json",
+  </QueryTab>
+  <VariablesTab>
+    {`{
+  "path": "appname/data/entityname/filename.json",
   "content": "hello world!",
   "message": "added: hello world!"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Delete File", link: "/mutations/delete-file"}} next={{name: "Draft File", link: "/mutations/draft-file"}} />
+<Pagination
+  prev={{ name: "Delete File", link: "/mutations/delete-file" }}
+  next={{ name: "Draft File", link: "/mutations/draft-file" }}
+/>

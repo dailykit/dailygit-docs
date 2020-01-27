@@ -4,7 +4,12 @@ route: /queries/get-file
 menu: Queries
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Get file
 
@@ -16,14 +21,15 @@ This method can be used to get a file from filesystem
    getFile(path) => Promise<File>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path where the file is stored|
+| param | type   | description                   |
+| :---- | :----- | :---------------------------- |
+| path  | string | Path where the file is stored |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`query getFile($path: String!){
+  <QueryTab>
+    {`query getFile($path: String!){
   getFile(path: $path) {
     name
     path
@@ -36,13 +42,15 @@ This method can be used to get a file from filesystem
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-   "path": "./../apps/appname/data/entityname/filename.json"
+  </QueryTab>
+  <VariablesTab>
+    {`{
+   "path": "appname/data/entityname/filename.json"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Get Files", link: "/queries/get-files"}} next={{name: "Open File", link: "/queries/open-file"}} />
+<Pagination
+  prev={{ name: "Get Files", link: "/queries/get-files" }}
+  next={{ name: "Open File", link: "/queries/open-file" }}
+/>

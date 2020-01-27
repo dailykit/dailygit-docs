@@ -4,7 +4,12 @@ route: /mutations/delete-file
 menu: Mutations
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Delete File
 
@@ -16,14 +21,15 @@ This method can be used to delete file in filesystem
    deleteFile(path) => Promise<Result>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|path|string|Path where the file is stored|
+| param | type   | description                   |
+| :---- | :----- | :---------------------------- |
+| path  | string | Path where the file is stored |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`mutation deleteFile($path: String) {
+  <QueryTab>
+    {`mutation deleteFile($path: String) {
   deleteFile(path: $path) {
     ... on Error {
       success
@@ -36,13 +42,15 @@ This method can be used to delete file in filesystem
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-  "path": "./../apps/appname/data/entityname/filename.json"
+  </QueryTab>
+  <VariablesTab>
+    {`{
+  "path": "appname/data/entityname/filename.json"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Create File", link: "/mutations/create-file"}} next={{name: "Update File", link: "/mutations/update-file"}} />
+<Pagination
+  prev={{ name: "Create File", link: "/mutations/create-file" }}
+  next={{ name: "Update File", link: "/mutations/update-file" }}
+/>

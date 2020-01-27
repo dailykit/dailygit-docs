@@ -4,7 +4,12 @@ route: /mutations/rename-file
 menu: Mutations
 ---
 
-import {Pagination, QueryViewer, QueryTab, VariablesTab} from '../../src/components'
+import {
+  Pagination,
+  QueryViewer,
+  QueryTab,
+  VariablesTab
+} from "../../src/components";
 
 # Rename File
 
@@ -16,15 +21,16 @@ This method can be used to rename a file in filesystem
    renameFile(oldPath, newPath) => Promise<Result>
 ```
 
-|param|type|description|
-|:--|:--|:--|
-|oldPath|string|Path where the file is stored|
-|newPath|string|Path with new file name|
+| param   | type   | description                   |
+| :------ | :----- | :---------------------------- |
+| oldPath | string | Path where the file is stored |
+| newPath | string | Path with new file name       |
 
 ### Query
+
 <QueryViewer>
-   <QueryTab>
-{`mutation renameFile($oldPath: String!, $newPath: String!) {
+  <QueryTab>
+    {`mutation renameFile($oldPath: String!, $newPath: String!) {
   renameFile(oldPath: $oldPath, newPath: $newPath) {
     ... on Error {
       success
@@ -37,14 +43,16 @@ This method can be used to rename a file in filesystem
   }
 }
 `}
-   </QueryTab>
-   <VariablesTab>
-{`{
-  "oldPath": "./../apps/appname/data/entityname/filename.json",
-  "newPath": "./../apps/appname/data/entityname/filename1.json"
+  </QueryTab>
+  <VariablesTab>
+    {`{
+  "oldPath": "appname/data/entityname/filename.json",
+  "newPath": "appname/data/entityname/filename1.json"
 }
 `}
-   </VariablesTab>
+  </VariablesTab>
 </QueryViewer>
-
-<Pagination prev={{name: "Draft File", link: "/mutations/draft-file"}} next={{name: "Image Upload", link: "/mutations/image-upload"}} />
+<Pagination
+prev={{ name: "Draft File", link: "/mutations/draft-file" }}
+next={{ name: "Image Upload", link: "/mutations/image-upload" }}
+/>
