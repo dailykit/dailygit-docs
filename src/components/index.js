@@ -1,4 +1,3 @@
-import Pagination from "./Pagination";
-import { QueryViewer, QueryTab, VariablesTab } from "./QueryViewer";
+import CodeBlock from './CodeBlock'
 
-export { Pagination, QueryViewer, QueryTab, VariablesTab };
+export { CodeBlock }
