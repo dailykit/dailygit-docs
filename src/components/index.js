@@ -1,4 +1,4 @@
-import Pagination from "./Pagination";
-import { QueryViewer, QueryTab, VariablesTab } from "./QueryViewer";
+import CodeBlock from './CodeBlock'
+import { Accordian, AccordianPanel } from './Accordian'
 
-export { Pagination, QueryViewer, QueryTab, VariablesTab };
+export { CodeBlock, Accordian, AccordianPanel }
