@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const Row = styled.div`
    height: calc(100vh - 56px);
+   overflow-y: auto;
    display: flex;
    align-items: center;
    justify-content: center;
+   padding-bottom: 40px;
    > div {
       max-width: 490px;
    }
