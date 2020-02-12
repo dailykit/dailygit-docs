@@ -1,16 +1,14 @@
-const normalize = data => {
-  let links = {};
-  data.map(item => {
-    if (Array.isArray(item.children)) {
-      return item.children.map(i => {
-        const res = normalize(item.children);
-        return Object.keys(res).map(j => (links[j] = res[j]));
-      });
-    } else {
-      return (links[item.id] = item);
-    }
-  });
-  return links;
-};
+const normalize = menu => {
+   let pages = []
+   menu.map(node => {
+      if (node.link) {
+         return pages.push(node)
+      }
+      if (node.children && node.children.length > 0) {
+         return node.children.map(page => pages.push(page))
+      }
+   })
+   return pages
+}
 
-export default normalize;
+export default normalize

@@ -26,29 +26,24 @@ import {
    Next
 } from './styled'
 
-const DocTemplate = ({ data: { mdx, site } }) => {
+const DocTemplate = ({ data: { mdx, site }, path }) => {
    const [next, setNext] = React.useState(null)
    const [prev, setPrev] = React.useState(null)
    const { menu } = site.siteMetadata
    React.useEffect(() => {
-      const data = normalize(menu)
-      let index
-      Object.keys(data).map(id => {
-         if (data[id].link === mdx.fields.slug) {
-            index = Number(id)
-         }
-         return 0
-      })
+      const pages = normalize(menu)
 
-      if (index <= Object.keys(data).length) {
-         setNext(data[index + 1])
+      let index = pages.findIndex(page => page.link === mdx.fields.slug)
+      if (index <= pages.length) {
+         setNext(pages[index + 1])
       }
-      if (index > 1) {
-         setPrev(data[index - 1])
+      if (index > 0) {
+         setPrev(pages[index - 1])
       }
    }, [menu, mdx.fields.slug])
+
    return (
-      <Layout>
+      <Layout path={path}>
          <Wrapper>
             <MDXProvider
                components={{
@@ -117,11 +112,9 @@ export const query = graphql`
       site {
          siteMetadata {
             menu {
-               id
                link
                title
                children {
-                  id
                   link
                   title
                }
