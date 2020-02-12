@@ -1,3 +1,4 @@
-import MenuIcon from "./Menu";
+import MenuIcon from './Menu'
+import CaretIcon from './Caret'
 
-export { MenuIcon };
+export { MenuIcon, CaretIcon }
